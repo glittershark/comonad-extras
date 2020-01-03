@@ -15,7 +15,6 @@
 module Control.Comonad.Store.Zipper
   ( Zipper, zipper, zipper1, unzipper, size) where
 
-import Control.Applicative
 import Control.Comonad (Comonad(..))
 import Data.Functor.Extend
 import Data.Foldable

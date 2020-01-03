@@ -44,7 +44,6 @@ module Control.Comonad.Store.Pointer
   , module Control.Comonad.Store.Class
   ) where
 
-import Control.Applicative
 import Control.Comonad
 import Control.Comonad.Hoist.Class
 import Control.Comonad.Trans.Class
@@ -60,7 +59,7 @@ import Data.Typeable
 #endif
 
 #if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ < 708
-instance (Typeable i, Typeable1 w) => Typeable1 (PointerT i w) where
+instance (Typeable i, Typeable w) => Typeable (PointerT i w) where
   typeOf1 diwa = mkTyConApp storeTTyCon [typeOf (i diwa), typeOf1 (w diwa)]
     where
       i :: PointerT i w a -> i
